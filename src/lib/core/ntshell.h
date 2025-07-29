@@ -82,7 +82,7 @@ void ntshell_init(ntshell_t *p,
 void ntshell_execute(ntshell_t *p);
 void ntshell_set_prompt(ntshell_t *p, const char *prompt);
 void ntshell_version(int *major, int *minor, int *release);
-void ntshell_crlf(ntshell_t *p, bool CR, bool LF);
+void ntshell_crlf(ntshell_t *p, int CR, int LF);
 char* ntshell_newline(ntshell_t *p);
 #ifdef __cplusplus
 }

@@ -675,10 +675,10 @@ void ntshell_version(int *major, int *minor, int *release)
  * @param CR CR enable.
  * @param LF LF enable.
 */
-void ntshell_crlf(ntshell_t *p, bool CR, bool LF){
+void ntshell_crlf(ntshell_t *p, int CR, int LF){
     for (unsigned int i=0; i<sizeof(p->StrNewLine); i++) p->StrNewLine[i] = 0;
-    if(!CR & LF) p->StrNewLine[0] = 0x0a; // \n
-    else if(CR & LF){ p->StrNewLine[0] = 0x0d; 
+    if(CR==0 && LF==1) p->StrNewLine[0] = 0x0a; // \n
+    else if(CR==1 && LF==1){ p->StrNewLine[0] = 0x0d; 
                       p->StrNewLine[1] = 0x0a; } // \n
 }
 
